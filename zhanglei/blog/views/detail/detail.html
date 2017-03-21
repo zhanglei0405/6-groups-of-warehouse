@@ -1,0 +1,22 @@
+<%-include ../include/header.html%>
+<div style="overflow: hidden">
+    <div class="media" style="width:25%;height: 300px;overflow: hidden;margin:0px auto;">
+        <a class="media-left" href="#">
+            <img style="margin-bottom: 0px;" class="media-object" src="<%=article.user.avatar%>"  alt="">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading"><a href=""><%=article.title%></a></h4>
+            <%if(article.poster){%>
+            <img style="width:200px;height:200px;" src="<%=article.poster%>" alt=""/>
+            <%}%>
+            <p><%-article.content%></p>
+        </div>
+        <div class="media-bottom">
+            <span>作者：<%=article.user.username%></span>|
+            <span>时间：<%=article.createAt.toLocaleString()%></span>
+        </div>
+    </div>
+</div>
+
+<%-include ../include/footer.html%>
+

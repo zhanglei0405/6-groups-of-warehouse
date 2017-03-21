@@ -1,0 +1,47 @@
+<%-include include/header.html%>
+<div style="overflow: hidden">
+  <%articles.forEach(function(article,index){%>
+  <div class="media" style="float: left;width:25%;height: 300px;overflow: hidden;">
+    <a class="media-left" href="#">
+      <img class="media-object" src="<%=article.user.avatar%>"  alt="">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"><a href="/detail/detail/?_id=<%=article._id%>"><%=article.title%></a></h4>
+      <%if(article.poster){%>
+      <img style="width:200px;height:200px;" src="<%=article.poster%>" alt=""/>
+      <%}%>
+      <p><%-article.content%></p>
+    </div>
+    <div class="media-bottom">
+      <span>作者：<%=article.user.username%></span>
+      <span>时间：<%=article.createAt.toLocaleString()%></span>
+    </div>
+    <%if(user){%>
+    <div class="media-bottom">
+      <a href="/delet/delet/?_id=<%=article._id%>">删除</a>
+      <a href="/article/edit/?_id=<%=article._id%>">修改</a>
+    </div>
+    <%}%>
+  </div>
+  <%})%>
+</div>
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum>1?pageNum-1:1)%>&pageSize=<%=pageSize%>" aria-label="Previous">
+        <span aria-hidden="true">-</span>
+      </a>
+    </li>
+    <%for (var i=1; i<=totalPage; i++){%>
+    <li class="<%=((pageNum==i) ? 'active': '')%>"><a href="/?keyword=<%=keyword%>&pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a></li>
+    <%}%>
+
+    <li>
+      <a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum<totalPage?pageNum+1:totalPage)%>&pageSize=<%=pageSize%>" aria-label="Next">
+        <span aria-hidden="true">+</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<%-include include/footer.html%>
+
