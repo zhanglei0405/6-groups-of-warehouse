@@ -1,0 +1,53 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #f2e7ca url(templatemo_body.jpg) top center;
+}
+a {
+  color: #00B7FF;
+}
+.article {
+  width: 50%;
+  margin: 20px auto;
+}
+.article .media-bottom {
+  padding-left: 60px;
+}
+.article .media-object {
+  border-radius: 50%;
+}
+.page {
+  text-align: center;
+}
+
+/*details*/
+.post_section {
+  width: 50%;
+  margin: 70px auto;
+  clear: both;
+  padding-bottom: 20px;
+  background: url(templatemo_content.jpg) bottom repeat-x;
+  margin-bottom: 20px;
+}
+.post_section .post_content {
+  padding: 0 0 0 50px;
+}
+.post_section h2 {
+  font-size: 28px;
+  color: #749d07;
+  padding: 30px 0 20px 50px;
+  background: url(templatemo_header.png) no-repeat bottom left;
+}
+.post_section p {
+  margin-bottom: 20px;
+}
+.post_section img {
+  width: 300px;
+  height: 220px;
+  margin: 20px 0;
+}
+.post_content .btn {
+  margin-right: 15px;
+  background: #98C123;
+  outline: none;
+}
