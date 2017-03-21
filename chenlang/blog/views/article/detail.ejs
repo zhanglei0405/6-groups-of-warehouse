@@ -1,0 +1,20 @@
+<%-include ../include/head.ejs%>
+<div class="post_section">
+    <h2><a href="#"><%=article.title%></a></h2>
+    <div class="post_content">
+        <span>作者：<%=article.user.username%></span> |
+        <span>时间：<%=article.createAt.toLocaleString()%></span><br>
+        <%if(article.poster){%>
+            <img src="<%='/' + article.poster%>" alt="image" />
+        <%}%>
+        <p><%-article.content%></p>
+        <a href="#" class="more"><a href="#" class="comment">Comments (124)</a><br><br>
+        <a href="/article/update?id=<%=article._id%>">
+            <button type="button" class="btn"> 修改 </button>
+        </a>
+        <a href="/article/delete?id=<%=article._id%>">
+            <button type="button" class="btn"> 删除 </button>
+        </a>
+    </div>
+</div>
+<%-include ../include/foot.ejs%>
